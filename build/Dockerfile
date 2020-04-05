@@ -22,7 +22,8 @@ RUN apt-get update \
       gpg --keyserver hkp://ipv4.pool.sks-keyservers.net --recv-keys "595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7" || \
       gpg --keyserver hkp://pgp.mit.edu:80 --recv-keys "595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7" ; \
       gpg --batch --verify /tini.asc /tini \
-    && chmod +x /tini  
+    && chmod +x /tini \
+    && mv /tini /bin/tini 
 
 
 
@@ -42,8 +43,8 @@ LABEL maintainer="ulbricht@innoroute.de" \
       org.label-schema.schema-version="0.1"
 
 
-COPY --from=base /tini /bin/tini
-COPY --from=base /usr/bin/FAH* /usr/bin/
+#COPY  /tini /bin/tini
+#COPY  /usr/bin/FAH* /usr/bin/
 
 WORKDIR /app
 
