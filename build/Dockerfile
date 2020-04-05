@@ -43,9 +43,6 @@ LABEL maintainer="ulbricht@innoroute.de" \
       org.label-schema.schema-version="0.1"
 
 
-#COPY  /tini /bin/tini
-#COPY  /usr/bin/FAH* /usr/bin/
-
 WORKDIR /app
 
 # hadolint ignore=DL3008
@@ -63,4 +60,4 @@ EXPOSE 36330 7396
 USER fah
 
 ENTRYPOINT ["/bin/tini", "--", "/usr/bin/FAHClient", "--web-allow=0/0:7396", "--allow=0/0:7396", "--smp=true"]
-CMD ["--user=Anonymous", "--team=229500", "--power=full", "--gpu-usage=100", "--cpu-usage=100"]
+CMD ["--user=Anonymous", "--team=258301", "--power=full", "--gpu-usage=100", "--cpu-usage=100"]
