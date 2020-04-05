@@ -1,0 +1,1 @@
+# folding@home docker-container
